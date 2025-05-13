@@ -1,14 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
+import Nav from "@/components/nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Poppins } from "next/font/google";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins", // for custom Tailwind usage
 });
 
 export const metadata = {
@@ -19,9 +18,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <Nav />
         {children}
       </body>
     </html>
