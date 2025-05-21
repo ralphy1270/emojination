@@ -11,6 +11,7 @@ import face from "../../public/images/form/face.png";
 export default function Form() {
   const [loading, setLoading] = useState(false);
   const [capVal, setCapVal] = useState(null);
+  const recaptchaRef = useRef();
 
   const firstName = useRef();
   const lastName = useRef();
@@ -118,6 +119,8 @@ export default function Form() {
       });
 
       const data = await response.text();
+      recaptchaRef.current.reset();
+      setCapVal(null);
       alert("Form submitted successfully!");
 
       e.target.reset(); // Reset the form if submission is successful
@@ -314,6 +317,7 @@ export default function Form() {
           </div>
           <div className="mt-10">
             <ReCAPTCHA
+              ref={recaptchaRef}
               sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
               onChange={(val) => setCapVal(val)}
             />
