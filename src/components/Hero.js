@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import kaHome from "../../public/images/hero/ka-home.png";
 import bigEmoji from "../../public/images/hero/big_emoji.png";
@@ -9,6 +12,7 @@ import cloud from "../../public/images/hero/cloud.png";
 import backgroundBuilding from "../../public/images/hero/background-building.png";
 import background from "../../public/images/hero/background.png";
 import egroup1 from "../../public/images/hero/egroup1.png";
+import egroup2 from "../../public/images/hero/egroup2.png";
 import gifEmoji from "../../public/images/hero/gif-emoji.gif";
 import emoji1 from "../../public/images/hero/emoji1.png";
 import emoji3 from "../../public/images/hero/emoji3.png";
@@ -17,6 +21,15 @@ import backgroundCircles from "../../public/images/hero/background-circles.png";
 import textContent from "../../public/images/hero/text-content.png";
 
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % 2); // Only two images
+  }, 7000); // Change image every 7 seconds
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <div id="Hero">
       <div className="relative flex flex-col xl:flex-row items-center justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1 overflow-hidden">
@@ -30,14 +43,42 @@ export default function Hero() {
             alt=""
             priority
           />
-          <div className="relative w-full">
-            <Image
-              className="w-[960px] xl:-ml-5 xl:mt-14 z-20 pointer-events-none select-noneyg 2xl:"
-              src={egroup1}
-              alt=""
-              priority
-            />
-          </div>
+          <AnimatePresence mode="wait">
+            {index == 0 && (
+              <motion.div
+                key="group1"
+                initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ type: "tween", duration: 0.2 }}
+                className="relative w-full"
+              >
+                <Image
+                  className="w-[960px] xl:-ml-5 xl:mt-14 z-20 pointer-events-none select-none"
+                  src={egroup1}
+                  alt=""
+                  priority
+                />
+              </motion.div>
+            )}
+            {index == 1 && (
+              <motion.div
+                key="group2"
+                initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ type: "tween", duration: 0.2 }}
+                className="relative w-full"
+              >
+                <Image
+                  className="w-[960px] xl:-ml-5 xl:mt-14 z-20 pointer-events-none select-none"
+                  src={egroup2}
+                  alt=""
+                  priority
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
           <div className="absolute w-full h-full z-20">
             <div className="relative w-full h-full">
               <Image
@@ -118,7 +159,7 @@ export default function Hero() {
         </div>
         <div className="absolute -bottom-5 w-full z-30">
           <Image
-            className="pointer-events-none select-none w-full"
+            className="pointer-events-none select-none w-full scale-105"
             src={cloud}
             alt=""
             priority
