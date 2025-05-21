@@ -29,7 +29,7 @@ export default function Features() {
           <div className="flex flex-col items-center justify-center relative w-full">
             <Image className="max-w-[246px] z-10" src={prize} alt="" priority />
             <Image
-              className="absolute top-2 max-w-[246px]"
+              className="absolute top-2 max-w-[246px] pointer-events-none select-none"
             
               src={prizeShadow}
               alt=""
@@ -37,7 +37,7 @@ export default function Features() {
             />
           </div>
           <div className="flex flex-col items-center justify-between w-full">
-            <Image className="max-w-[787px]" src={winner} alt="" priority />
+            <Image className="max-w-[787px] pointer-events-none select-none" src={winner} alt="" priority />
           </div>
         </div>
         <div className="w-full -mb-1 z-30">
@@ -50,11 +50,11 @@ export default function Features() {
           />
         </div>
         <div className="absolute w-full z-10">
-          <Image className="w-full" src={confetti} alt="" priority />
+          <Image className="w-full pointer-events-none select-none" src={confetti} alt="" priority />
         </div>
         <div className="absolute w-full z-0">
           <Image
-            className="w-full opacity-80"
+            className="w-full opacity-80 pointer-events-none select-none"
             src={yellowBackground}
           
             alt=""
@@ -62,13 +62,13 @@ export default function Features() {
           />
         </div>
         <div className="absolute w-full z-0">
-          <Image className="w-full" src={smallConfetti} alt="" priority />
+          <Image className="w-full pointer-events-none select-none" src={smallConfetti} alt="" priority />
         </div>
         <div className="absolute w-full h-full z-40">
           <div className="relative w-full h-full">
             <div className="absolute w-[100px] top-40 left-90 z-0">
               <Image
-                className="max-w-[100px]"
+                className="max-w-[100px] pointer-events-none select-none"
                 src={emoji1}
               
                 alt=""
@@ -76,13 +76,13 @@ export default function Features() {
               />
             </div>
             <div className="absolute w-[100px] right-85 top-50 z-0">
-              <Image className="max-w-[100px] scale-x-[-1]" src={emoji1} alt="" priority />
+              <Image className="max-w-[100px] scale-x-[-1] pointer-events-none select-none" src={emoji1} alt="" priority />
             </div>
             <div className="absolute w-[190px] bottom-60 right-60 z-0">
-              <Image className="max-w-[190px]" src={emoji3} alt="" priority />
+              <Image className="max-w-[190px] pointer-events-none select-none" src={emoji3} alt="" priority />
             </div>
             <div className="absolute w-[190px] bottom-50 left-40 z-0">
-              <Image className="max-w-[190px]" src={emoji4} alt="" priority />
+              <Image className="max-w-[190px] pointer-events-none select-none" src={emoji4} alt="" priority />
             </div>
           </div>
         </div>

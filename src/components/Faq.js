@@ -1,6 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
+import victory1 from "../../public/images/faq/victory1.gif";
+import victory2 from "../../public/images/faq/victory2.gif";
+import victory3 from "../../public/images/faq/victory3.gif";
+
+
 import FaqSection from "./FaqSection";
 
 export default function Faq() {
@@ -9,7 +14,7 @@ export default function Faq() {
       <div className="flex items-center justify-center py-7">
         <span className="font-comic text-[32px]">Promotion Mechanics</span>
       </div>
-      <div className="flex flex-col items-center justify-start py-5 px-75 space-y-12">
+      <div className="relative flex flex-col items-center justify-start py-5 px-75 space-y-12 overflow-hidden">
         <FaqSection question="Who can join?">
           This contest is open to all Filipinos who are 18 years old and above.
         </FaqSection>
@@ -34,6 +39,16 @@ export default function Faq() {
           Bank transfer, remittance, and transaction fees will be shouldered by
           the show
         </FaqSection>
+        <Image className="absolute -left-20 max-w-[490px] pointer-events-none select-none" src={victory1} alt="" priority/>
+        <Image className="absolute bottom-45 -left-18 max-w-[430px] pointer-events-none select-none" src={victory2} alt="" priority/>
+        <Image className="absolute top-75 -right-14  max-w-[420px] pointer-events-none select-none" src={victory3} alt="" priority/>
+      </div>
+      <div className="px-75 font-figtree font-bold text-base text-center italic mt-8 mb-24">
+        Promo runs from
+        <span className="font-extrabold">May 31, 2025 to August 09, 2025</span>.
+        Per DTI-Fair Trade Permit No. FTEB-206859 Series of 2024. Click{" "}
+        <span className="text-[#4363F8] cursor-pointer">here</span> for more
+        details{" "}
       </div>
     </div>
   );

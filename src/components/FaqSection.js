@@ -8,7 +8,6 @@ import arrow from "@/public/images/faq/arrow.png";
 
 export default function FaqSection({question, children}) {
   const [expanded, setExpand] = useState(false);
-  console.log(expanded);
 
   return (
     <div className="flex flex-col items-start justify-between w-full border-2 border-black rounded-lg overflow-hidden">
@@ -24,7 +23,7 @@ export default function FaqSection({question, children}) {
           transition={{ type: "tween", duration: 0.1 }}
         >
           <Image
-            className="w-6 h-4"
+            className="w-6 h-4 pointer-events-none select-none"
             style={{ height: "auto" }}
             src={arrow}
             alt=""
