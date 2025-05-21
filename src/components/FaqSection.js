@@ -10,7 +10,7 @@ export default function FaqSection({question, children}) {
   const [expanded, setExpand] = useState(false);
 
   return (
-    <div className="flex flex-col items-start justify-between w-full border-2 border-black rounded-lg overflow-hidden">
+    <div className="flex flex-col items-start justify-between w-full border-2 border-black rounded-lg overflow-hidden z-10">
       <motion.div
         className={`flex items-center justify-between w-full text-xl font-bold text-gray-700 px-7 py-3.5 ${expanded ? "" : "border-b-2 rounded-none"} cursor-pointer`}
         animate={{ backgroundColor : expanded ? "#FFFFFF" : "#3DE93D" }}
@@ -36,7 +36,7 @@ export default function FaqSection({question, children}) {
         transition={{ type: "tween", duration: 0.1 }}
         className="w-full text-xl font-bold text-gray-500"
       >
-        <div className="w-full px-7 py-3.5">
+        <div className="w-full px-7 py-3.5 bg-white">
           {children}
         </div>
       </motion.div>

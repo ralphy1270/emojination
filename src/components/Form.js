@@ -1,12 +1,16 @@
 "use client";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import oceanWave from "../../public/images/form/ocean-wave.png";
 import face from "../../public/images/form/face.png";
 
+//6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
+
 export default function Form() {
   const [loading, setLoading] = useState(false);
+  const [capVal, setCapVal] = useState(null);
 
   const firstName = useRef();
   const lastName = useRef();
@@ -77,6 +81,13 @@ export default function Form() {
     // Checkbox validation
     if (!agree1 || !agree2) {
       alert("You must agree to all the terms before submitting.");
+      setLoading(false);
+      return;
+    }
+
+    // Checkbox validation
+    if (!capVal) {
+      alert("Please verify you are not a robot.");
       setLoading(false);
       return;
     }
@@ -295,9 +306,17 @@ export default function Form() {
               >
                 I agree to Cignal TV Inc. Terms of Use and have read and
                 understood the Cignal TV Inc{`'`}s{" "}
-                <span className="text-[#4363F8]">Privacy Policy</span>
+                <span className="text-[#4363F8] cursor-pointer">
+                  Privacy Policy
+                </span>
               </label>
             </div>
+          </div>
+          <div className="mt-10">
+            <ReCAPTCHA
+              sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
+              onChange={(val) => setCapVal(val)}
+            />
           </div>
           <button
             className={`mt-10 px-22 py-5 text-xl rounded-lg font-semibold text-white 
