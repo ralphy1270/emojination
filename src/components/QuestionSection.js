@@ -92,34 +92,41 @@ export default function QuestionSection({ image }) {
       return;
     }
 
-    // Proceed to submit https://script.google.com/macros/s/AKfycbx7rR3BYK2hX_WNavW3r_0WX1X6k54xqYrrcMFlUvZD2W9AEgVSbroYFnejMJnWRTiUjQ/exec
-const url = "https://script.google.com/macros/s/AKfycbx7rR3BYK2hX_WNavW3r_0WX1X6k54xqYrrcMFlUvZD2W9AEgVSbroYFnejMJnWRTiUjQ/exec";
+    // Proceed to submit
+    const url =
+      "https://script.google.com/macros/s/AKfycbx7rR3BYK2hX_WNavW3r_0WX1X6k54xqYrrcMFlUvZD2W9AEgVSbroYFnejMJnWRTiUjQ/exec";
 
-try {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: new URLSearchParams({
-      First_Name: firstName,
-      Last_Name: lastName,
-      Birth_Date: birthDate,
-      Address: address,
-      Contact_Number: contactNumber,
-      Email_Address: email,
-      Answer: answer || ''
-    }).toString()
-  });
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(`First_Name=${encodeURIComponent(
+          firstName
+        )}&Last_Name=${encodeURIComponent(
+          lastName
+        )}&Birth_Date=${encodeURIComponent(
+          birthDate
+        )}&Address=${encodeURIComponent(
+          address
+        )}&Contact_Number=${encodeURIComponent(
+          contactNumber
+        )}&Email_Address=${encodeURIComponent(
+          email
+        )}&Answer=${encodeURIComponent(answer)}`).toString,
+      });
 
-  const data = await response.json();
-  recaptchaRef.current.reset();
-  setCapVal(null);
-  alert(data.message);
-  e.target.reset();
-} catch (error) {
-  alert("Error submitting form: " + error.message);
-}
+      const data = await response.text();
+      recaptchaRef.current.reset();
+      setCapVal(null);
+      alert(data);
+
+      e.target.reset(); // Reset the form if submission is successful
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      alert("Something went wrong while submitting the form.");
+    }
     setLoading(false);
   };
 
