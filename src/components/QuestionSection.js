@@ -101,7 +101,7 @@ export default function QuestionSection({ image }) {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "X-Origin": window.location.origin
+          "X-Origin": window.location.origin,
         },
         body: `First_Name=${encodeURIComponent(
           firstName
