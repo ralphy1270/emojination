@@ -94,8 +94,7 @@ export default function QuestionSection({ image }) {
 
     // Proceed to submit
     const url =
-      "https://script.google.com/macros/s/AKfycbx7rR3BYK2hX_WNavW3r_0WX1X6k54xqYrrcMFlUvZD2W9AEgVSbroYFnejMJnWRTiUjQ/exec";
-
+      "https://script.google.com/macros/s/AKfycbyFGrvzpmDmdd5kLYYyB1FoksImAd2haqJmRk9sj47OYBL-iFu33T7BM_oh7_0xSx4jbg/exec";
     try {
       const response = await fetch(url, {
         method: "POST",
