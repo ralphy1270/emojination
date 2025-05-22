@@ -116,21 +116,7 @@ export default function QuestionSection({ image }) {
           email
         )}&Answer=${encodeURIComponent(answer)}`,
       });
-
-      body: `First_Name=${encodeURIComponent(
-        firstName
-      )}&Last_Name=${encodeURIComponent(
-        lastName
-      )}&Birth_Date=${encodeURIComponent(
-        birthDate
-      )}&Address=${encodeURIComponent(
-        address
-      )}&Contact_Number=${encodeURIComponent(
-        contactNumber
-      )}&Email_Address=${encodeURIComponent(email)}&Answer=${encodeURIComponent(
-        answer
-      )}`;
-
+      
       const data = await response.text();
       recaptchaRef.current.reset();
       setCapVal(null);
