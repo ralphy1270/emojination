@@ -95,13 +95,14 @@ export default function QuestionSection({ image }) {
     // Proceed to submit
     const url =
       "https://script.google.com/macros/s/AKfycbyFGrvzpmDmdd5kLYYyB1FoksImAd2haqJmRk9sj47OYBL-iFu33T7BM_oh7_0xSx4jbg/exec";
+
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(`First_Name=${encodeURIComponent(
+        body: `First_Name=${encodeURIComponent(
           firstName
         )}&Last_Name=${encodeURIComponent(
           lastName
@@ -113,7 +114,7 @@ export default function QuestionSection({ image }) {
           contactNumber
         )}&Email_Address=${encodeURIComponent(
           email
-        )}&Answer=${encodeURIComponent(answer)}`).toString,
+        )}&Answer=${encodeURIComponent(answer)}`,
       });
 
       const data = await response.text();
