@@ -6,7 +6,6 @@ import Faq from "@/src/components/Faq";
 import Footer from "@/src/components/Footer";
 
 export default function Home() {
-  console.log("5:22");
   return (
     <>
     <Hero />
