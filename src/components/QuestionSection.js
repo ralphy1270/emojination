@@ -3,13 +3,11 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
-
-
 //localhost key: 6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
+
 //site key: 6Ldfl0QrAAAAAEQY_uE0xufSLFKZUUejdEYdRXSq
 
-
-export default function QuestionSection({image}) {
+export default function QuestionSection({ image }) {
   const [loading, setLoading] = useState(false);
   const [capVal, setCapVal] = useState(null);
   const recaptchaRef = useRef();
@@ -96,7 +94,7 @@ export default function QuestionSection({image}) {
 
     // Proceed to submit
     const url =
-      "https://script.google.com/macros/s/AKfycbz3RbTm2iwbJs6knXfd-pd3XK8inPRjO69afDm5ZA0uKP_J39IqNYLwTbphz_7ds6kwlw/exec";
+      "https://script.google.com/macros/s/AKfycbzzTv1N_Kp8nFJNO6El713FbcR_xg3aXjQp5Z5WFKJjLSVuNweu7poh9yDRxwTfzkNZNw/exec";
 
     try {
       const response = await fetch(url, {
@@ -118,6 +116,20 @@ export default function QuestionSection({image}) {
           email
         )}&Answer=${encodeURIComponent(answer)}`,
       });
+
+      body: `First_Name=${encodeURIComponent(
+        firstName
+      )}&Last_Name=${encodeURIComponent(
+        lastName
+      )}&Birth_Date=${encodeURIComponent(
+        birthDate
+      )}&Address=${encodeURIComponent(
+        address
+      )}&Contact_Number=${encodeURIComponent(
+        contactNumber
+      )}&Email_Address=${encodeURIComponent(email)}&Answer=${encodeURIComponent(
+        answer
+      )}`;
 
       const data = await response.text();
       recaptchaRef.current.reset();
@@ -311,7 +323,7 @@ export default function QuestionSection({image}) {
           <div className="mt-10">
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6Ldfl0QrAAAAAEQY_uE0xufSLFKZUUejdEYdRXSq"
+              sitekey="6LfdqEQrAAAAAFW6l_DtNswgLeP5Q9cwiX2-qh3i"
               onChange={(val) => setCapVal(val)}
             />
           </div>
