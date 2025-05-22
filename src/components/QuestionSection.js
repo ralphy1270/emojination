@@ -116,11 +116,11 @@ export default function QuestionSection({ image }) {
           email
         )}&Answer=${encodeURIComponent(answer)}`,
       });
-      
+
       const data = await response.text();
       recaptchaRef.current.reset();
       setCapVal(null);
-      alert("Form submitted successfully!");
+      alert(data);
 
       e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
