@@ -5,7 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 
-//6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
+//localhost key: 6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
+//site key: 6Ldfl0QrAAAAAEQY_uE0xufSLFKZUUejdEYdRXSq
 
 
 export default function QuestionSection({image}) {
@@ -310,7 +311,7 @@ export default function QuestionSection({image}) {
           <div className="mt-10">
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
+              sitekey="6Ldfl0QrAAAAAEQY_uE0xufSLFKZUUejdEYdRXSq"
               onChange={(val) => setCapVal(val)}
             />
           </div>
