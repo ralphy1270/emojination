@@ -36,7 +36,6 @@ function getCurrentComponentIndex() {
 
 export default function Form() {
   const [index, setIndex] = useState(getCurrentComponentIndex());
-  console.log("10:09pm");
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(getCurrentComponentIndex());
