@@ -100,7 +100,7 @@ export default function QuestionSection({ image }) {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "text/plain;charset=utf-8",
           "X-Origin": window.location.origin
         },
         body: `First_Name=${encodeURIComponent(
