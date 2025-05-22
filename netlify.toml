@@ -1,6 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "out" # or "dist" or ".next" depending on your framework
+
 [[headers]]
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+    # Optional: Content Security Policy
+    # Allow embedding content like YouTube, Google Maps (NOT google.com search)
+    Content-Security-Policy = """
+      default-src 'self';
+      frame-src https://www.youtube.com https://maps.google.com;
+      frame-ancestors 'self';
+    """
