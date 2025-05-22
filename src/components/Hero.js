@@ -157,7 +157,7 @@ useEffect(() => {
             priority
           />
         </div>
-        <div className="absolute -bottom-5 w-full z-30">
+        <div className="absolute bottom-0 w-full z-30">
           <Image
             className="pointer-events-none select-none w-full scale-105"
             src={cloud}

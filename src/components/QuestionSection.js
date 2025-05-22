@@ -8,7 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 //6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
 
 
-export default function QuestionSection({image1, image2}) {
+export default function QuestionSection({image}) {
   const [loading, setLoading] = useState(false);
   const [capVal, setCapVal] = useState(null);
   const recaptchaRef = useRef();
@@ -95,7 +95,7 @@ export default function QuestionSection({image1, image2}) {
 
     // Proceed to submit
     const url =
-      "https://script.google.com/macros/s/AKfycbx7aPwCivHmErr1dG0YOfpeuXcRlAK0ZJ32gkAoKALbmzNGIRmOQ0ilwjSdCwfMCyWySA/exec";
+      "https://script.google.com/macros/s/AKfycbz3RbTm2iwbJs6knXfd-pd3XK8inPRjO69afDm5ZA0uKP_J39IqNYLwTbphz_7ds6kwlw/exec";
 
     try {
       const response = await fetch(url, {
@@ -135,12 +135,11 @@ export default function QuestionSection({image1, image2}) {
     <>
       <div className="flex flex-row items-center justify-center space-x-10 pointer-events-none select-none">
         <Image
-          className="w-[329px] border border-black pointer-events-none select-none rounded-lg"
-          src={image1}
+          className="w-[765px] border border-black pointer-events-none select-none rounded-3xl"
+          src={image}
           alt=""
           priority
         />
-        <Image className="w-[329px]" src={imaege2} alt="" priority />
       </div>
       <div className="m-0 px-75 py-12">
         <form
@@ -159,7 +158,7 @@ export default function QuestionSection({image1, image2}) {
           />
           <div className="flex items-center justify-center">
             <span className="font-comic text-[32px] uppercase mt-14">
-              Finalize by filling out the form
+              Complete the form to enter
             </span>
           </div>
           <div className="w-full grid grid-cols-2 gap-5 mt-11">

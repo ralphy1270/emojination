@@ -11,7 +11,7 @@ import FaqSection from "./FaqSection";
 export default function Faq() {
   return (
     <div id="faq">
-      <div className="relative h-[1380px] overflow-hidden">
+      <div className="relative h-[1280px] overflow-hidden">
         <div className="flex items-center justify-center py-7">
           <span className="font-comic text-[32px]">Promotion Mechanics</span>
         </div>
@@ -59,15 +59,6 @@ export default function Faq() {
             alt=""
             priority
           />
-        </div>
-        <div className="absolute bottom-24 px-75 font-figtree font-bold text-base text-center italic pt-8">
-          Promo runs from
-          <span className="font-extrabold">
-            May 31, 2025 to August 09, 2025
-          </span>
-          . Per DTI-Fair Trade Permit No. FTEB-206859 Series of 2024. Click{" "}
-          <span className="text-[#4363F8] cursor-pointer">here</span> for more
-          details{" "}
         </div>
         <Image
           className="pointer-events-none select-none absolute bottom-0 max-w-full"
