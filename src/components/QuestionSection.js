@@ -94,7 +94,7 @@ export default function QuestionSection({ image }) {
 
     // Proceed to submit
     const url =
-      "https://script.google.com/macros/s/AKfycbxEzyKlp-euQN59R8Fp6Yr-q-Ur8TtRRZPi5OafywDwd083PPhKpnfEu34rh5VepwMB/exec";
+      "https://script.google.com/macros/s/AKfycbwvRdVXy_T3y6EOEsld3y6XXi_rXRMSocfLdd9Dep5WrLki1bU13j6ypLeP_iXFZ-3JFw/exec";
 
     try {
       const response = await fetch(url, {
@@ -102,7 +102,7 @@ export default function QuestionSection({ image }) {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: `First_Name=${encodeURIComponent(
+        body: new URLSearchParams(`First_Name=${encodeURIComponent(
           firstName
         )}&Last_Name=${encodeURIComponent(
           lastName
@@ -114,7 +114,7 @@ export default function QuestionSection({ image }) {
           contactNumber
         )}&Email_Address=${encodeURIComponent(
           email
-        )}&Answer=${encodeURIComponent(answer)}`,
+        )}&Answer=${encodeURIComponent(answer)}`).toString,
       });
 
       const data = await response.text();
