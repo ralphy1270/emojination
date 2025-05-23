@@ -96,7 +96,7 @@ export default function QuestionSection({ image }) {
     const form = new FormData(e.target);
 
     try {
-      const response = await fetch("/api/route", {
+      const response = await fetch("/api/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
