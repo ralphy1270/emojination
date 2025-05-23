@@ -3,10 +3,6 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
-//localhost key: 6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB
-
-//site key: 6Ldfl0QrAAAAAEQY_uE0xufSLFKZUUejdEYdRXSq
-
 export default function QuestionSection({ image }) {
   const [loading, setLoading] = useState(false);
   const [capVal, setCapVal] = useState(null);
@@ -37,25 +33,25 @@ export default function QuestionSection({ image }) {
   const submitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const firstName = e.target.firstname.value.trim();
-    const lastName = e.target.lastname.value.trim();
-    const birthDate = e.target.birthdate.value.trim();
-    const address = e.target.address.value.trim();
-    const contactNumber = e.target.contactnumber.value.trim();
-    const email = e.target.email.value.trim();
-    const answer = e.target.answer.value.trim();
+    const firstNameVal = e.target.firstname.value.trim();
+    const lastNameVal = e.target.lastname.value.trim();
+    const birthDateVal = e.target.birthdate.value.trim();
+    const addressVal = e.target.address.value.trim();
+    const contactNumberVal = e.target.contactnumber.value.trim();
+    const emailVal = e.target.email.value.trim();
+    const answerVal = e.target.answer.value.trim();
     const agree1 = e.target.checkbox1.checked;
     const agree2 = e.target.checkbox2.checked;
 
     // Basic validation
     if (
-      !firstName ||
-      !lastName ||
-      !birthDate ||
-      !address ||
-      !contactNumber ||
-      !email ||
-      !answer
+      !firstNameVal ||
+      !lastNameVal ||
+      !birthDateVal ||
+      !addressVal ||
+      !contactNumberVal ||
+      !emailVal ||
+      !answerVal
     ) {
       alert("Please fill out all fields.");
       setLoading(false);
@@ -64,7 +60,7 @@ export default function QuestionSection({ image }) {
 
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(emailVal)) {
       alert("Please enter a valid email address.");
       setLoading(false);
       return;
@@ -72,7 +68,7 @@ export default function QuestionSection({ image }) {
 
     // Birthdate format validation (MM/DD/YYYY)
     const birthDateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
-    if (!birthDateRegex.test(birthDate)) {
+    if (!birthDateRegex.test(birthDateVal)) {
       alert("Please enter birth date in MM/DD/YYYY format.");
       setLoading(false);
       return;
@@ -92,36 +88,27 @@ export default function QuestionSection({ image }) {
       return;
     }
 
-    // Proceed to submit
-    const url =
-      "https://script.google.com/macros/s/AKfycbwnPyfmr3zr1XKPEyK11QaVMhZ4qZmdhb8Own7xlqjBPQeeNhTuHJobkXh8lmsllnex2g/exec";
-
     try {
-      const response = await fetch('/api/submit', {
+      const response = await fetch("/api/submit", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "X-Origin": window.location.origin,
+          "Content-Type": "application/json",
         },
-        body: `First_Name=${encodeURIComponent(
-          firstName
-        )}&Last_Name=${encodeURIComponent(
-          lastName
-        )}&Birth_Date=${encodeURIComponent(
-          birthDate
-        )}&Address=${encodeURIComponent(
-          address
-        )}&Contact_Number=${encodeURIComponent(
-          contactNumber
-        )}&Email_Address=${encodeURIComponent(
-          email
-        )}&Answer=${encodeURIComponent(answer)}`,
+        body: JSON.stringify({
+          firstName: firstName.current.value,
+          lastName: lastName.current.value,
+          birthDate: birthDate.current.value,
+          contactNumber: contactNumber.current.value,
+          address: address.current.value,
+          email: email.current.value,
+          answer: answer.current.value,
+        }),
       });
 
-      const data = await response.text();
+      const data = await response.json();
       recaptchaRef.current.reset();
       setCapVal(null);
-      alert(data);
+      alert(data.message);
 
       e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
@@ -310,7 +297,7 @@ export default function QuestionSection({ image }) {
           <div className="mt-10">
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6LfdqEQrAAAAAFW6l_DtNswgLeP5Q9cwiX2-qh3i"
+              sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
               onChange={(val) => setCapVal(val)}
             />
           </div>

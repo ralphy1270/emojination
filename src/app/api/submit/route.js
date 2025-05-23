@@ -1,48 +1,59 @@
-async function handler(req, res) {
-  if (req.method == "POST") {
-    const data = req.body;
+export async function POST(request) {
+  try {
+    const body = await request.json();
     const {
-      First_Name,
-      Last_Name,
-      Birth_Date,
-      Address,
-      Contact_Number,
-      Email_Address,
-      Answer,
-    } = req.body;
+      firstName,
+      lastName,
+      birthDate,
+      address,
+      contactNumber,
+      email,
+      answer,
+    } = body;
+
+    if (!firstName || !lastName) {
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     const url =
-      "https://script.google.com/macros/s/AKfycbzJy4Pc_F0vvTpJdg4JuSO5iqkYnXJigh4fpJhdexGGxLFpgu6ugT68aYbhhS_TSUOC-Q/exec";
+      "https://script.google.com/macros/s/AKfycbwb9FWT9cWWRcmjuIUsXOMclySxrwVITrx5jBbhZbdn0mXo_VwAeK-zUm6XKoDGcGIUkg/exec";
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `First_Name=${First_Name}&Last_Name=${Last_Name}&Birth_Date=${Birth_Date}&Address=${Address}&Contact_Number=${Contact_Number}&Email_Address=${Email_Address}&Answer=${Answer}`,
-      });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `First_Name=${encodeURIComponent(firstName)}&Last_Name=${encodeURIComponent(
+        lastName
+      )}&Birth_Date=${encodeURIComponent(birthDate)}&Address=${encodeURIComponent(
+        address
+      )}&Contact_Number=${encodeURIComponent(contactNumber)}&Email_Address=${encodeURIComponent(
+        email
+      )}&Answer=${encodeURIComponent(answer)}`,
+    });
 
-      const data = await response.text();
-      res.status(201).json({ message: "Form submitted successfully!" });
-    } catch (error) {
-      throw new Error(`Error submitting the form!`);
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Google Script Error: ${text}`);
     }
+
+    const data = await response.text();
+
+    return new Response(
+      JSON.stringify({ message: "Form submitted successfully.", data }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  } catch (error) {
+    console.error("API error:", error);
+    return new Response(JSON.stringify({ error: "Server error", detail: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
-
-export default handler;
-
-// export async function POST (req: NextRequest) {
-//   try {
-// req.origin !== EncodedVideoChunk.OROG
-// throew new err("unauth")
-
-//     const body = await req.json()
-//     const auth = await authService.find(body)
-
-//     return callback({ success: true, auth }, 200)
-//   } catch (error) {
-//     throw error
-//   }
-// }
