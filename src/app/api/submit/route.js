@@ -19,15 +19,19 @@ export default async function handler(req, res) {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams({
-          First_Name: firstName,
-          Last_Name: lastName,
-          Birth_Date: birthDate,
-          Address: address,
-          Contact_Number: contactNumber,
-          Email_Address: email,
-          Answer: answer,
-        }).toString(),
+        body: `First_Name=${encodeURIComponent(
+          firstName
+        )}&Last_Name=${encodeURIComponent(
+          lastName
+        )}&Birth_Date=${encodeURIComponent(
+          birthDate
+        )}&Address=${encodeURIComponent(
+          address
+        )}&Contact_Number=${encodeURIComponent(
+          contactNumber
+        )}&Email_Address=${encodeURIComponent(
+          email
+        )}&Answer=${encodeURIComponent(answer)}`,
       });
 
       const text = await response.text();
