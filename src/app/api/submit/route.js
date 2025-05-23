@@ -1,5 +1,15 @@
 export async function POST(request) {
   try {
+    const headers = request.headers;
+    const origin = headers.get("origin") || headers.get("referer") || "unknown";
+
+    if (origin !== "http://localhost:3000") {
+      return new Response(JSON.stringify({ message: "Unauthorized" }), {
+        status: 403,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const body = await request.json();
     const {
       firstName,
@@ -12,10 +22,13 @@ export async function POST(request) {
     } = body;
 
     if (!firstName || !lastName) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
 
     const url =
@@ -26,13 +39,19 @@ export async function POST(request) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `First_Name=${encodeURIComponent(firstName)}&Last_Name=${encodeURIComponent(
+      body: `First_Name=${encodeURIComponent(
+        firstName
+      )}&Last_Name=${encodeURIComponent(
         lastName
-      )}&Birth_Date=${encodeURIComponent(birthDate)}&Address=${encodeURIComponent(
+      )}&Birth_Date=${encodeURIComponent(
+        birthDate
+      )}&Address=${encodeURIComponent(
         address
-      )}&Contact_Number=${encodeURIComponent(contactNumber)}&Email_Address=${encodeURIComponent(
-        email
-      )}&Answer=${encodeURIComponent(answer)}`,
+      )}&Contact_Number=${encodeURIComponent(
+        contactNumber
+      )}&Email_Address=${encodeURIComponent(email)}&Answer=${encodeURIComponent(
+        answer
+      )}`,
     });
 
     if (!response.ok) {
@@ -51,9 +70,12 @@ export async function POST(request) {
     );
   } catch (error) {
     console.error("API error:", error);
-    return new Response(JSON.stringify({ error: "Server error", detail: error.message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ message: "Server error", detail: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
