@@ -93,31 +93,37 @@ export default function QuestionSection({ image }) {
     }
 
     // Proceed to submit
-    const form = new FormData(e.target);
+    const url =
+      "https://script.google.com/macros/s/AKfycbwnPyfmr3zr1XKPEyK11QaVMhZ4qZmdhb8Own7xlqjBPQeeNhTuHJobkXh8lmsllnex2g/exec";
 
     try {
-      const response = await fetch("/api/submit", {
+      const response = await fetch('/api/submit', {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-Origin": window.location.origin,
         },
-        body: JSON.stringify({
-          First_Name: form.get("First_Name"),
-          Last_Name: form.get("Last_Name"),
-          Birth_Date: form.get("Birth_Date"),
-          Address: form.get("Address"),
-          Contact_Number: form.get("Contact_Number"),
-          Email_Address: form.get("Email"),
-          Answer: form.get("Answer"),
-        }),
+        body: `First_Name=${encodeURIComponent(
+          firstName
+        )}&Last_Name=${encodeURIComponent(
+          lastName
+        )}&Birth_Date=${encodeURIComponent(
+          birthDate
+        )}&Address=${encodeURIComponent(
+          address
+        )}&Contact_Number=${encodeURIComponent(
+          contactNumber
+        )}&Email_Address=${encodeURIComponent(
+          email
+        )}&Answer=${encodeURIComponent(answer)}`,
       });
 
-      const result = await response.json();
-
+      const data = await response.text();
       recaptchaRef.current.reset();
       setCapVal(null);
-      alert(result.message);
-      e.target.reset();
+      alert(data);
+
+      e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
       console.error("Form submission failed:", error);
       alert("Something went wrong while submitting the form.");
