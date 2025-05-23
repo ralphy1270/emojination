@@ -124,7 +124,7 @@ export default function QuestionSection({ image }) {
       e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
       console.error(error);
-      alert(error || "Something went wrong while submitting the form.");
+      alert(`Message: ${error}`);
     }
     setLoading(false);
   };

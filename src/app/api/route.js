@@ -26,7 +26,7 @@ async function handler(req, res) {
       const data = await response.text();
       res.status(201).json({ message: "Form submitted successfully!" });
     } catch (error) {
-      throw new Error(`Message: ${error}`);
+      throw new Error(`Error submitting the form!`);
     }
   }
 }
