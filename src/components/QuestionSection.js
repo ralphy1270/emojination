@@ -94,13 +94,14 @@ export default function QuestionSection({ image }) {
 
     // Proceed to submit
     const url =
-      "https://script.google.com/macros/s/AKfycbxQd6E8CYvXxyr0G251CtBdiQX2SCkV0Wf-YEe1WwcT9rqML3B_yHFOTiEhkFHna4sWSA/exec";
+      "https://script.google.com/macros/s/AKfycbwnPyfmr3zr1XKPEyK11QaVMhZ4qZmdhb8Own7xlqjBPQeeNhTuHJobkXh8lmsllnex2g/exec";
 
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          "X-Origin": window.location.origin,
         },
         body: `First_Name=${encodeURIComponent(
           firstName
