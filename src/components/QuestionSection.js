@@ -303,10 +303,10 @@ export default function QuestionSection({ image }) {
           </div>
           <button
             className={`mt-10 px-22 py-5 text-xl rounded-lg font-semibold text-white 
-               bg-[#4363F8] hover:bg-[#002DFF] 
+               bg-[#4363F8]/80 hover:bg-[#002DFF]/80 
                shadow-[0_4px_5px_-3px_#0009]
-               border-b-[3pt] border-[#083acd] uppercase ${
-                 loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"
+               border-b-[3pt] border-[#083acd]/40 uppercase ${
+                 loading ? "cursor-not-allowed opacity-40" : "cursor-pointer"
                }`}
             disabled={loading}
           >

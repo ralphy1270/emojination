@@ -35,7 +35,7 @@ useEffect(() => {
       <div className="relative flex flex-col xl:flex-row items-center justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1 overflow-hidden">
         <div
           id="hero-main"
-          className="order-2 xl:order-1 relative flex flex-col items-start justify-start w-full xl:w-[60%]"
+          className="order-2 xl:order-1 relative flex flex-col items-start justify-start w-full xl:w-[60%] z-30"
         >
           <Image
             className="absolute w-[920px] xl:ml-5 xl:mt-6 z-0 pointer-events-none select-none"
@@ -54,7 +54,7 @@ useEffect(() => {
                 className="relative w-full"
               >
                 <Image
-                  className="w-[960px] xl:-ml-5 xl:mt-14 z-20 pointer-events-none select-none"
+                  className="w-[960px] xl:-ml-5 xl:mt-14 z-30 pointer-events-none select-none"
                   src={egroup1}
                   alt=""
                   priority
@@ -71,7 +71,7 @@ useEffect(() => {
                 className="relative w-full"
               >
                 <Image
-                  className="w-[960px] xl:-ml-5 xl:mt-14 z-20 pointer-events-none select-none"
+                  className="w-[960px] xl:-ml-5 xl:mt-14 z-30 pointer-events-none select-none"
                   src={egroup2}
                   alt=""
                   priority
@@ -149,7 +149,7 @@ useEffect(() => {
             priority
           />
         </div>
-        <div className="absolute w-full h-full z-20 overflow-hidden">
+        <div className="absolute w-full h-full z-10 overflow-hidden">
           <Image
             className="w-screen xl:scale-170 scale-500 h-auto pointer-events-none select-none"
             src={backgroundCircles}
@@ -157,7 +157,7 @@ useEffect(() => {
             priority
           />
         </div>
-        <div className="absolute bottom-0 w-full z-30">
+        <div className="absolute bottom-0 w-full z-50">
           <Image
             className="pointer-events-none select-none w-full scale-105"
             src={cloud}
