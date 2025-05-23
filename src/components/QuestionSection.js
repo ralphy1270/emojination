@@ -95,7 +95,7 @@ export default function QuestionSection({ image }) {
     // Proceed to submit
 
     try {
-      const response = await fetch('../app/api/route', {
+      const response = await fetch('../app/api/route.js', {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -124,7 +124,7 @@ export default function QuestionSection({ image }) {
       e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
       console.error(error);
-      alert("Something went wrong while submitting the form.");
+      alert(error || "Something went wrong while submitting the form.");
     }
     setLoading(false);
   };
