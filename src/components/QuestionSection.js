@@ -93,11 +93,9 @@ export default function QuestionSection({ image }) {
     }
 
     // Proceed to submit
-    const url =
-      "https://script.google.com/macros/s/AKfycbwnPyfmr3zr1XKPEyK11QaVMhZ4qZmdhb8Own7xlqjBPQeeNhTuHJobkXh8lmsllnex2g/exec";
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch('../app/api/route', {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -125,7 +123,7 @@ export default function QuestionSection({ image }) {
 
       e.target.reset(); // Reset the form if submission is successful
     } catch (error) {
-      console.error("Form submission failed:", error);
+      console.error(error);
       alert("Something went wrong while submitting the form.");
     }
     setLoading(false);
