@@ -93,38 +93,34 @@ export default function QuestionSection({ image }) {
     }
 
     // Proceed to submit
+    const form = new FormData(e.target);
 
     try {
-      const response = await fetch('../app/api/route.js', {
+      const response = await fetch("/api/route", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "X-Origin": window.location.origin,
+          "Content-Type": "application/json",
         },
-        body: `First_Name=${encodeURIComponent(
-          firstName
-        )}&Last_Name=${encodeURIComponent(
-          lastName
-        )}&Birth_Date=${encodeURIComponent(
-          birthDate
-        )}&Address=${encodeURIComponent(
-          address
-        )}&Contact_Number=${encodeURIComponent(
-          contactNumber
-        )}&Email_Address=${encodeURIComponent(
-          email
-        )}&Answer=${encodeURIComponent(answer)}`,
+        body: JSON.stringify({
+          First_Name: form.get("First_Name"),
+          Last_Name: form.get("Last_Name"),
+          Birth_Date: form.get("Birth_Date"),
+          Address: form.get("Address"),
+          Contact_Number: form.get("Contact_Number"),
+          Email_Address: form.get("Email"),
+          Answer: form.get("Answer"),
+        }),
       });
 
-      const data = await response.text();
+      const result = await response.json();
+
       recaptchaRef.current.reset();
       setCapVal(null);
-      alert(data);
-
-      e.target.reset(); // Reset the form if submission is successful
+      alert(result.message);
+      e.target.reset();
     } catch (error) {
-      console.error(error);
-      alert(`Message: ${error}`);
+      console.error("Form submission failed:", error);
+      alert("Something went wrong while submitting the form.");
     }
     setLoading(false);
   };

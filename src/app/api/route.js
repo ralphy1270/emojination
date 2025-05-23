@@ -1,18 +1,17 @@
-async function handler(req, res) {
-  if (req.method == "POST") {
-    const data = req.body;
+export default async function handler(req, res) {
+  if (req.method === "POST") {
     const {
-      First_Name,
-      Last_Name,
-      Birth_Date,
-      Address,
-      Contact_Number,
-      Email_Address,
-      Answer,
+      firstName,
+      lastName,
+      birthDate,
+      address,
+      contactNumber,
+      email,
+      answer,
     } = req.body;
 
     const url =
-      "https://script.google.com/macros/s/AKfycbzJy4Pc_F0vvTpJdg4JuSO5iqkYnXJigh4fpJhdexGGxLFpgu6ugT68aYbhhS_TSUOC-Q/exec";
+      "https://script.google.com/macros/s/AKfycbyBkqw63HHosaiRdiX7jVYW9J7A2OuPDLBdDYgkFWI3KE8pp1QtLBXx5TQsJf0u3cm61g/exec";
 
     try {
       const response = await fetch(url, {
@@ -20,18 +19,29 @@ async function handler(req, res) {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `First_Name=${First_Name}&Last_Name=${Last_Name}&Birth_Date=${Birth_Date}&Address=${Address}&Contact_Number=${Contact_Number}&Email_Address=${Email_Address}&Answer=${Answer}`,
+        body: new URLSearchParams({
+          First_Name: firstName,
+          Last_Name: lastName,
+          Birth_Date: birthDate,
+          Address: address,
+          Contact_Number: contactNumber,
+          Email_Address: email,
+          Answer: answer,
+        }).toString(),
       });
 
-      const data = await response.text();
-      res.status(201).json({ message: "Form submitted successfully!" });
+      const text = await response.text();
+      return res.status(200).json({ message: text });
     } catch (error) {
-      throw new Error(`Error submitting the form!`);
+      console.error("Error submitting to Google Sheets:", error);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
+  } else {
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
 
-export default handler;
 
 // export async function POST (req: NextRequest) {
 //   try {
