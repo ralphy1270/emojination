@@ -4,15 +4,15 @@ import React, { useEffect, useState } from "react";
 import QuestionSection from "@/src/components/QuestionSection";
 
 import questionImage1 from "@/public/images/form/question-image1.png";
-import imageTest1 from "@/public/images/form/face1.png";
+import questionImage2 from "@/public/images/form/question-image2.png";
 import imageTest2 from "@/public/images/form/ocean-wave1.png";
 
 const components = [
   <QuestionSection key="question1" image={questionImage1} />,
-  <QuestionSection key="question2" image={imageTest1} />,
+  <QuestionSection key="question2" image={questionImage2} />,
   <QuestionSection key="question3" image={imageTest2} />,
   <QuestionSection key="question4" image={questionImage1} />,
-  <QuestionSection key="question5" image={imageTest1} />,
+  <QuestionSection key="question5" image={questionImage2} />,
   <QuestionSection key="question6" image={imageTest2} />,
 ];
 
@@ -46,15 +46,15 @@ export default function Form() {
 
   return (
     <div id="form">
-      <div className="flex flex-row items-start justify-center px-5 pt-7 pb-13">
+      <div className="flex flex-row items-start justify-center px-5 pt-7 pb-3">
         <div className="flex items-center justify-center">
-          <span className="font-comic-bangers text-[40px] xl:text-[32px] uppercase">
+          <span className="font-bangers text-[40px] xl:text-[52px] uppercase">
             Emoji Question of the Week:
           </span>
         </div>
       </div>
       {components[index]}
-      <div className="px-5 xl:px-75 xl:pb-0 pb-7 font-figtree font-bold text-base text-center italic">
+      <div className="px-5 xl:px-72 xl:pb-25 xl:pt-3 pb-7 font-figtree font-bold text-base text-center italic">
         Promo runs from
         <span className="font-extrabold"> May 31, 2025 to August 09, 2025</span>
         . Per DTI-Fair Trade Permit No. FTEB-206859 Series of 2024. Click{" "}

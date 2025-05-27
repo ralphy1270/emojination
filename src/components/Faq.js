@@ -12,10 +12,10 @@ export default function Faq() {
   return (
     <div id="faq">
       <div className="relative h-fit xl:h-[1280px] overflow-hidden pb-30">
-        <div className="flex items-center justify-center py-3 xl:py-7">
-          <span className="font-comic-bangers text-[40px] xl:text-[32px]">Promotion Mechanics</span>
+        <div className="flex items-center justify-center py-3 xl:pt-7 xl:pb-2">
+          <span className="font-bangers text-[40px] xl:text-[52px]">Promotion Mechanics</span>
         </div>
-        <div className="flex flex-col items-center justify-start xl:py-5 px-5 xl:px-75 space-y-12">
+        <div className="flex flex-col items-center justify-start xl:py-0 px-5 xl:px-75 space-y-12">
           <FaqSection question="Who can join?">
             This contest is open to all Filipinos who are 18 years old and
             above.

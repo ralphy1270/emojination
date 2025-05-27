@@ -120,7 +120,7 @@ export default function QuestionSection({ image }) {
 
   return (
     <>
-      <div className="flex flex-row items-center justify-center space-x-10 pointer-events-none select-none -mt-10 xl:mt-0 xl:mx-0 mx-5">
+      <div className="flex flex-row items-center justify-center space-x-10 pointer-events-none select-none xl:mt-0 xl:mx-0 mx-5">
         <Image
           className="w-lg xl:w-[765px] border border-black pointer-events-none select-none rounded-3xl"
           src={image}
@@ -128,7 +128,7 @@ export default function QuestionSection({ image }) {
           priority
         />
       </div>
-      <div className="m-0 px-5 xl:px-75 py-8 xl:py-12">
+      <div className="m-0 px-5 xl:px-72 py-8 xl:py-6">
         <form
           className="flex flex-col items-center justify-center font-poppins"
           onSubmit={submitHandler}
@@ -144,11 +144,11 @@ export default function QuestionSection({ image }) {
             required
           />
           <div className="flex items-center justify-center">
-            <span className="font-comic-bangers text-[40px] xl:text-[32px] uppercase mt-7 xl:mt-14">
+            <span className="font-bangers text-[40px] xl:text-[52px] uppercase mt-7 xl:mt-8">
               Complete the form to enter
             </span>
           </div>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 mt-4 xl:mt-11">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 mt-4 xl:mt-4">
             <div className="flex flex-col space-y-3">
               <label
                 htmlFor="firstname"
@@ -269,7 +269,7 @@ export default function QuestionSection({ image }) {
               />
               <label
                 htmlFor="agree1"
-                className="text-base font-medium text-gray-700"
+                className="text-base font-semibold text-gray-700"
               >
                 I certify that I am 18 years old.
               </label>
@@ -284,7 +284,7 @@ export default function QuestionSection({ image }) {
               />
               <label
                 htmlFor="agree2"
-                className="text-base font-medium text-gray-700"
+                className="text-base font-semibold text-gray-700"
               >
                 I agree to Cignal TV Inc. Terms of Use and have read and
                 understood the Cignal TV Inc{`'`}s{" "}
@@ -294,7 +294,7 @@ export default function QuestionSection({ image }) {
               </label>
             </div>
           </div>
-          <div className="mt-5 xl:mt-10">
+          <div className="mt-5">
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
