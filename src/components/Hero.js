@@ -33,13 +33,13 @@ export default function Hero() {
   return (
     <div id="Hero">
       <div className="relative pb-1 overflow-hidden">
-        <div className="relative flex flex-col md:flex-row items-center justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
+        <div className="relative flex flex-col md:flex-row items-stretch justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
           <div
             id="hero-main"
             className="order-2 md:order-1 relative flex flex-col items-center md:items-start justify-center md:justify-start w-full md:w-[60%] z-30 md:mt-0 mt-8"
           >
             <Image
-              className="absolute w-[920px] md:ml-5 md:mt-6 z-0 pointer-events-none select-none"
+              className="absolute sm:bottom-0 xl:top-0 w-[920px] md:ml-5 md:mt-6 z-0 pointer-events-none select-none"
               src={background}
               alt=""
               priority
@@ -52,7 +52,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ type: "tween", duration: 0.2 }}
-                  className="relative w-full"
+                  className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
                     className="w-lg scale-105 sm:scale-110 md:scale-100 md:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
@@ -69,7 +69,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ type: "tween", duration: 0.2 }}
-                  className="relative w-full"
+                  className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
                     className="w-lg scale-105 sm:scale-110 md:scale-100 md:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
@@ -83,31 +83,31 @@ export default function Hero() {
             <div className="absolute w-full h-full z-20">
               <div className="relative w-full h-full">
                 <Image
-                  className="absolute w-[50px] xl:w-[100px] left-10 md:top-7 md:left-30 pointer-events-none select-none md:scale-150 xl:scale-100"
+                  className="absolute w-[50px] xl:w-[100px] left-10 top-0 md:top-30 xl:top-7 md:left-30 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji1}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[50px] xl:w-[100px] right-5 md:top-4 md:right-12 scale-x-[-1] pointer-events-none select-none md:scale-150 xl:scale-100"
+                  className="absolute w-[50px] xl:w-[100px] right-5 top-0 md:top-30 xl:top-4 md:right-12 scale-x-[-1] pointer-events-none select-none md:w-[80px]"
                   src={emoji1}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[90px] xl:w-[190px] top-15 right-0 md:top-48 md:right-0 pointer-events-none select-none md:scale-150 xl:scale-100"
+                  className="absolute w-[90px] xl:w-[190px] top-15 right-0 md:top-48 md:right-0 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji3}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[80px] xl:w-[190px] bottom-20 md:bottom-25 left-7 pointer-events-none select-none md:scale-150 xl:scale-100"
+                  className="absolute w-[80px] xl:w-[190px] bottom-20 xl:bottom-20 sm:bottom-35 lg:bottom-40 md:bottom-30 left-7 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji4}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[140px] xl:w-[290px] bottom-20 right-0 md:bottom-25 md:right-10 pointer-events-none select-none md:scale-150 xl:scale-100"
+                  className="absolute w-[140px] xl:w-[290px] bottom-20 right-0 sm:bottom-30 lg:bottom-40 md:bottom-25 md:right-10 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={gifEmoji}
                   alt=""
                   priority
@@ -117,7 +117,7 @@ export default function Hero() {
           </div>
           <div
             id="hero-content"
-            className="flex flex-col items-center justify-center px-5 md:justify-start -space-y-9 md:-space-y-8 xl:-space-y-12 order-1 md:order-2 w-full md:w-[40%] z-20 pt-9 md:pr-18 md:pb-50"
+            className="order-1 md:order-2 flex flex-col items-center justify-start px-5 md:justify-start -space-y-9 md:-space-y-6 lg:-space-y-8 xl:-space-y-12 w-full md:w-[40%] z-20 pt-10 sm:pb-55 md:pb-40"
           >
             <Image
               className="w-[240px] md:w-[359px] h-auto pointer-events-none select-none"
