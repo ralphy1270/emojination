@@ -11,11 +11,11 @@ import FaqSection from "./FaqSection";
 export default function Faq() {
   return (
     <div id="faq">
-      <div className="relative h-[1280px] overflow-hidden">
-        <div className="flex items-center justify-center py-7">
-          <span className="font-comic text-[32px]">Promotion Mechanics</span>
+      <div className="relative h-fit xl:h-[1280px] overflow-hidden pb-30">
+        <div className="flex items-center justify-center py-3 xl:py-7">
+          <span className="font-comic-bangers text-[40px] xl:text-[32px]">Promotion Mechanics</span>
         </div>
-        <div className="flex flex-col items-center justify-start py-5 px-75 space-y-12">
+        <div className="flex flex-col items-center justify-start xl:py-5 px-5 xl:px-75 space-y-12">
           <FaqSection question="Who can join?">
             This contest is open to all Filipinos who are 18 years old and
             above.
@@ -42,26 +42,26 @@ export default function Faq() {
             be shouldered by the show
           </FaqSection>
           <Image
-            className="absolute -left-20 max-w-[490px] pointer-events-none select-none"
+            className="xl:block hidden absolute -left-20 max-w-[490px] pointer-events-none select-none"
             src={victory1}
             alt=""
             priority
           />
           <Image
-            className="absolute bottom-45 -left-18 max-w-[430px] pointer-events-none select-none"
+            className="xl:block hidden absolute bottom-45 -left-18 max-w-[430px] pointer-events-none select-none"
             src={victory2}
             alt=""
             priority
           />
           <Image
-            className="absolute top-75 -right-14  max-w-[420px] pointer-events-none select-none"
+            className="xl:block hidden absolute top-75 -right-14  max-w-[420px] pointer-events-none select-none"
             src={victory3}
             alt=""
             priority
           />
         </div>
         <Image
-          className="pointer-events-none select-none absolute bottom-0 max-w-full"
+          className="pointer-events-none select-none absolute bottom-20 xl:bottom-0 max-w-full scale-300 xl:scale-100"
           src={backgroundBuilding}
           alt=""
           priority

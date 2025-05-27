@@ -48,13 +48,13 @@ export default function Form() {
     <div id="form">
       <div className="flex flex-row items-start justify-center pt-7 pb-13">
         <div className="flex items-center justify-center">
-          <span className="font-comic text-[32px] uppercase">
+          <span className="font-comic-bangers text-[40px] xl:text-[32px] uppercase">
             Emoji Question of the Week:
           </span>
         </div>
       </div>
       {components[index]}
-      <div className="px-75 font-figtree font-bold text-base text-center italic">
+      <div className="px-5 xl:px-75 xl:pb-0 pb-7 font-figtree font-bold text-base text-center italic">
         Promo runs from
         <span className="font-extrabold"> May 31, 2025 to August 09, 2025</span>
         . Per DTI-Fair Trade Permit No. FTEB-206859 Series of 2024. Click{" "}

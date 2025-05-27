@@ -120,15 +120,15 @@ export default function QuestionSection({ image }) {
 
   return (
     <>
-      <div className="flex flex-row items-center justify-center space-x-10 pointer-events-none select-none">
+      <div className="flex flex-row items-center justify-center space-x-10 pointer-events-none select-none -mt-10 xl:mt-0 xl:mx-0 mx-5">
         <Image
-          className="w-[765px] border border-black pointer-events-none select-none rounded-3xl"
+          className="w-lg xl:w-[765px] border border-black pointer-events-none select-none rounded-3xl"
           src={image}
           alt=""
           priority
         />
       </div>
-      <div className="m-0 px-75 py-12">
+      <div className="m-0 px-5 xl:px-75 py-8 xl:py-12">
         <form
           className="flex flex-col items-center justify-center font-poppins"
           onSubmit={submitHandler}
@@ -144,11 +144,11 @@ export default function QuestionSection({ image }) {
             required
           />
           <div className="flex items-center justify-center">
-            <span className="font-comic text-[32px] uppercase mt-14">
+            <span className="font-comic-bangers text-[40px] xl:text-[32px] uppercase mt-7 xl:mt-14">
               Complete the form to enter
             </span>
           </div>
-          <div className="w-full grid grid-cols-2 gap-5 mt-11">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-5 mt-4 xl:mt-11">
             <div className="flex flex-col space-y-3">
               <label
                 htmlFor="firstname"
@@ -226,7 +226,7 @@ export default function QuestionSection({ image }) {
                 htmlFor="contactnumber"
                 className="text-xl font-semibold text-gray-700"
               >
-                Contact Number
+                Mobile Number
               </label>
               <input
                 type="text"
@@ -258,8 +258,8 @@ export default function QuestionSection({ image }) {
               />
             </div>
           </div>
-          <div className="flex flex-col space-y-7 items-start justify-start w-full mt-11">
-            <div className="flex items-center space-x-3">
+          <div className="flex flex-col space-y-5 xl:space-y-7 items-start justify-start w-full mt-11">
+            <div className="flex items-start space-x-3">
               <input
                 id="agree1"
                 type="checkbox"
@@ -274,7 +274,7 @@ export default function QuestionSection({ image }) {
                 I certify that I am 18 years old.
               </label>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-start space-x-3">
               <input
                 id="agree2"
                 type="checkbox"
@@ -294,7 +294,7 @@ export default function QuestionSection({ image }) {
               </label>
             </div>
           </div>
-          <div className="mt-10">
+          <div className="mt-5 xl:mt-10">
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey="6LepdkIrAAAAANtZ8Qf5iH5G661TiDXGg58OJnNB"
@@ -302,7 +302,7 @@ export default function QuestionSection({ image }) {
             />
           </div>
           <button
-            className={`mt-10 px-22 py-5 text-xl rounded-lg font-semibold text-white 
+            className={`mt-5 xl:mt-10 px-28 xl:px-22 py-5 text-xl rounded-lg font-semibold text-white 
                bg-[#4363F8]/80 hover:bg-[#002DFF]/80 
                shadow-[0_4px_5px_-3px_#0009]
                border-b-[3pt] border-[#083acd]/40 uppercase ${
