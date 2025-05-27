@@ -148,7 +148,7 @@ export default function QuestionSection({ image }) {
               Complete the form to enter
             </span>
           </div>
-          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-5 mt-4 xl:mt-11">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 mt-4 xl:mt-11">
             <div className="flex flex-col space-y-3">
               <label
                 htmlFor="firstname"
@@ -302,7 +302,7 @@ export default function QuestionSection({ image }) {
             />
           </div>
           <button
-            className={`mt-5 xl:mt-10 px-28 xl:px-22 py-5 text-xl rounded-lg font-semibold text-white 
+            className={`mt-5 xl:mt-10 w-full sm:w-auto sm:px-28 xl:px-22 py-5 text-xl rounded-lg font-semibold text-white 
                bg-[#4363F8]/80 hover:bg-[#002DFF]/80 
                shadow-[0_4px_5px_-3px_#0009]
                border-b-[3pt] border-[#083acd]/40 uppercase ${

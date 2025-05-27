@@ -46,7 +46,7 @@ export default function Form() {
 
   return (
     <div id="form">
-      <div className="flex flex-row items-start justify-center pt-7 pb-13">
+      <div className="flex flex-row items-start justify-center px-5 pt-7 pb-13">
         <div className="flex items-center justify-center">
           <span className="font-comic-bangers text-[40px] xl:text-[32px] uppercase">
             Emoji Question of the Week:
