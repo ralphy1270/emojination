@@ -8,9 +8,9 @@ export default function Navbar() {
   return (
     <section id="Navbar">
       <div className="flex flex-col text-center">
-        <div className="flex flex-row items-end xl:items-center justify-around px-5 h-[144px] xl:h-[50px] text-white text-sm font-poppins font-semibold bg-[#8C0A0A] uppercase">
+        <div className="flex flex-row items-end xl:items-center justify-around px-5 py-1.5 xl:h-[50px] text-white text-sm font-poppins font-semibold bg-[#8C0A0A] uppercase">
           <div className="relative xl:w-2/12">
-            <Image className="xl:absolute rounded-lg xl:rounded-none max-w-32 xl:left-15 mb-1.5 xl:-top-4" src={cignalTv} alt="CignalTv logo" priority/>
+            <Image className="xl:absolute rounded-lg xl:rounded-none max-w-32 xl:left-15 xl:-top-4" src={cignalTv} alt="CignalTv logo" priority/>
           </div>
           <div className="hidden xl:flex xl:items-center xl:justify-around xl:-space-x-24 w-6/12">
             <div className="group flex flex-row items-center justify-center space-x-2 cursor-pointer">

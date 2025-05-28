@@ -73,7 +73,7 @@ export default function Features() {
         </div>
         <div className="absolute w-full h-full z-40">
           <div className="relative w-full h-full">
-            <div className="absolute max-w-[60px] xl:max-w-[100px] top-55 md:top-60 left-5 md:left-45 xl:top-40 xl:left-90 z-0">
+            <div className="absolute max-w-[60px] xl:max-w-[100px] top-60 left-5 md:left-45 xl:top-40 xl:left-90 z-0">
               <Image
                 className="max-w-[60px] xl:max-w-[100px] pointer-events-none select-none"
                 src={emoji1}
@@ -97,7 +97,7 @@ export default function Features() {
                 priority
               />
             </div>
-            <div className="absolute max-w-[95px] xl:max-w-[190px] bottom-40 md:bottom-55 left-3 md:left-50 xl:bottom-50 xl:left-40 z-0">
+            <div className="absolute max-w-[95px] xl:max-w-[190px] bottom-35 md:bottom-55 left-3 md:left-50 xl:bottom-50 xl:left-40 z-0">
               <Image
                 className="max-w-[95px] xl:max-w-[190px] pointer-events-none select-none"
                 src={emoji4}

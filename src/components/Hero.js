@@ -33,13 +33,13 @@ export default function Hero() {
   return (
     <div id="Hero">
       <div className="relative pb-1 overflow-hidden">
-        <div className="relative flex flex-col md:flex-row items-stretch justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
+        <div className="relative flex flex-col space-y-5 sm:space-y-17 md:space-y-0 md:flex-row items-stretch justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
           <div
             id="hero-main"
-            className="order-2 md:order-1 relative flex flex-col items-center md:items-start justify-center md:justify-start w-full md:w-[60%] z-30 md:mt-0 mt-8"
+            className="order-2 md:order-1 relative flex flex-col items-end justify-center md:justify-start w-full md:w-[60%] z-30"
           >
             <Image
-              className="absolute sm:bottom-0 xl:top-0 w-[920px] md:ml-5 md:mt-6 z-0 pointer-events-none select-none"
+              className="absolute sm:bottom-0 xl:top-0 w-[920px] ml-15 md:ml-5 z-0 pointer-events-none select-none"
               src={background}
               alt=""
               priority
@@ -55,7 +55,7 @@ export default function Hero() {
                   className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
-                    className="w-lg scale-105 sm:scale-110 md:scale-100 md:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
+                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
                     src={egroup1}
                     alt=""
                     priority
@@ -72,7 +72,7 @@ export default function Hero() {
                   className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
-                    className="w-lg scale-105 sm:scale-110 md:scale-100 md:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
+                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
                     src={egroup2}
                     alt=""
                     priority
@@ -107,7 +107,7 @@ export default function Hero() {
                   priority
                 />
                 <Image
-                  className="absolute w-[140px] xl:w-[290px] bottom-20 right-0 sm:bottom-30 lg:bottom-40 md:bottom-25 md:right-10 pointer-events-none select-none lg:scale-150 xl:scale-100"
+                  className="absolute w-[180px] xl:w-[290px] bottom-10 right-0 sm:bottom-20 lg:bottom-25 md:bottom-15 md:right-10 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={gifEmoji}
                   alt=""
                   priority
@@ -117,7 +117,7 @@ export default function Hero() {
           </div>
           <div
             id="hero-content"
-            className="order-1 md:order-2 flex flex-col items-center justify-start px-5 md:justify-start -space-y-9 md:-space-y-6 lg:-space-y-8 xl:-space-y-12 w-full md:w-[40%] z-20 pt-10 sm:pb-55 md:pb-40"
+            className="order-1 md:order-2 flex flex-col items-center justify-start px-5 md:justify-start w-full md:w-[40%] z-20 pt-1 md:pt-3 lg:pt-10 md:pb-40"
           >
             <Image
               className="w-[240px] md:w-[359px] h-auto pointer-events-none select-none"
@@ -126,25 +126,25 @@ export default function Hero() {
               priority
             />
             <Image
-              className="w-[380px] md:w-[511.6970930337607px] h-auto rotate-6 -mt-3 md:-mt-3 pointer-events-none select-none"
+              className="w-[380px] md:w-[511.6970930337607px] h-auto rotate-7 -mt-10 lg:-mt-14 pointer-events-none select-none"
               src={kaHome}
               alt="ka nation at home"
               priority
             />
             <Image
-              className="w-[350px] md:w-[520px] h-auto pointer-events-none select-none"
+              className="w-[350px] md:w-[520px] -mt-3 lg:-mt-5 h-auto pointer-events-none select-none"
               src={manoodSumgot}
               alt="manood sumagot, manalo ng"
               priority
             />
             <Image
-              className="w-[350px] md:w-[446px] h-auto mt-3 pointer-events-none select-none"
+              className="w-[350px] md:w-[446px] mt-3 h-auto pointer-events-none select-none"
               src={twoThousand}
               alt="2000 pesos"
               priority
             />
             <Image
-              className="w-[440px] md:w-[510px] mt-7 md:mt-15 pointer-events-none select-none"
+              className="w-[440px] md:w-[510px] mt-7 md:mt-5 pointer-events-none select-none"
               src={textContent}
               alt=""
               priority
@@ -169,7 +169,7 @@ export default function Hero() {
         </div>
         <div className="absolute bottom-7 md:bottom-0 w-full z-50">
           <Image
-            className="pointer-events-none select-none w-full scale-350 sm:scale-190 lg:scale-230 xl:scale-105"
+            className="pointer-events-none select-none w-full scale-350 lg:scale-230 xl:scale-105"
             src={cloud}
             alt=""
             priority
