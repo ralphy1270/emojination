@@ -39,7 +39,7 @@ export default function Hero() {
             className="order-2 md:order-1 relative flex flex-col items-end justify-center md:justify-start w-full md:w-[60%] z-30"
           >
             <Image
-              className="absolute sm:bottom-0 xl:top-0 w-[920px] ml-15 md:ml-5 z-0 pointer-events-none select-none"
+              className="absolute sm:bottom-0 xl:top-0 w-[920px] left-8 scale-95 sm:left-0 sm:scale-100 md:ml-5 z-0 pointer-events-none select-none"
               src={background}
               alt=""
               priority

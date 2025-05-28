@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Modal from "@/src/components/Modal";
 
 import QuestionSection from "@/src/components/QuestionSection";
 
@@ -46,6 +47,7 @@ export default function Form() {
 
   return (
     <div id="form">
+      <Modal/>
       <div className="flex flex-row items-start justify-center px-5 pt-7 pb-3">
         <div className="flex items-center justify-center">
           <span className="font-bangers text-[40px] xl:text-[52px] uppercase">

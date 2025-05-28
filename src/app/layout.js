@@ -1,14 +1,6 @@
-
 import "./globals.css";
 import Navbar from "@/src/components/Navbar";
-
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins", // for custom Tailwind usage
-});
+import Footer from "@/src/components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,6 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

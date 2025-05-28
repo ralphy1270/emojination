@@ -30,7 +30,7 @@ export async function POST(request) {
         }
       );
     }
-
+//https://script.google.com/macros/s/AKfycbwb9FWT9cWWRcmjuIUsXOMclySxrwVITrx5jBbhZbdn0mXo_VwAeK-zUm6XKoDGcGIUkg/exec
     const url =
       "https://script.google.com/macros/s/AKfycbwb9FWT9cWWRcmjuIUsXOMclySxrwVITrx5jBbhZbdn0mXo_VwAeK-zUm6XKoDGcGIUkg/exec";
 
@@ -60,9 +60,10 @@ export async function POST(request) {
     }
 
     const data = await response.text();
+    console.log(data);
 
     return new Response(
-      JSON.stringify({ message: "Form submitted successfully.", data }),
+      JSON.stringify({ message: data }),
       {
         status: 200,
         headers: { "Content-Type": "application/json" },
