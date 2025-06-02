@@ -31,15 +31,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <div id="Hero">
+    <div className="pt-14" id="Hero">
       <div className="relative pb-1 overflow-hidden">
-        <div className="relative flex flex-col space-y-5 sm:space-y-17 md:space-y-0 md:flex-row items-stretch justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
+        <div className="relative flex flex-col space-y-[20px] sm:space-y-[68px] md:space-y-0 md:flex-row items-stretch justify-center bg-[#4AB3EC] border-t-[11px] border-t-black mt-1">
           <div
             id="hero-main"
-            className="order-2 md:order-1 relative flex flex-col items-end justify-center md:justify-start w-full md:w-[60%] z-30"
+            className="order-2 md:order-1 relative flex flex-col items-end justify-center md:justify-start w-full mt-[40px] sm:mt-[80px] md:mt-0 md:w-[60%] z-30"
           >
             <Image
-              className="absolute sm:bottom-0 xl:top-0 w-[920px] left-8 scale-95 sm:left-0 sm:scale-100 md:ml-5 z-0 pointer-events-none select-none"
+              className="absolute sm:bottom-0 xl:top-0 w-[920px] left-8 scale-95 sm:left-0 sm:scale-100 md:ml-[20px] z-0 pointer-events-none select-none"
               src={background}
               alt=""
               priority
@@ -55,7 +55,7 @@ export default function Hero() {
                   className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
-                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
+                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-[20px] md:mt-[56px] z-30 pointer-events-none select-none"
                     src={egroup1}
                     alt=""
                     priority
@@ -72,7 +72,7 @@ export default function Hero() {
                   className="md:absolute md:bottom-0 xl:relative w-full"
                 >
                   <Image
-                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-5 md:mt-14 z-30 pointer-events-none select-none"
+                    className="w-lg scale-105 sm:scale-110 md:scale-100 sm:w-[960px] md:-ml-5 md:mt-[56px] z-30 pointer-events-none select-none"
                     src={egroup2}
                     alt=""
                     priority
@@ -83,31 +83,31 @@ export default function Hero() {
             <div className="absolute w-full h-full z-20">
               <div className="relative w-full h-full">
                 <Image
-                  className="absolute w-[50px] xl:w-[100px] left-10 top-0 md:top-30 xl:top-7 md:left-30 pointer-events-none select-none lg:scale-150 xl:scale-100"
+                  className="absolute w-[50px] xl:w-[100px] left-10 top-0 md:top-[120px] xl:top-[28px] md:left-[120px] pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji1}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[50px] xl:w-[100px] right-5 top-0 md:top-30 xl:top-4 md:right-12 scale-x-[-1] pointer-events-none select-none md:w-[80px]"
+                  className="absolute w-[50px] xl:w-[100px] right-[20px] top-0 md:top-[120px] xl:top-[16px] md:right-[48px] flip-horizontal pointer-events-none select-none md:w-[80px]"
                   src={emoji1}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[90px] xl:w-[190px] top-15 right-0 md:top-48 md:right-0 pointer-events-none select-none lg:scale-150 xl:scale-100"
+                  className="absolute w-[90px] xl:w-[190px] top-[60px] right-0 md:top-[192px] md:right-0 pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji3}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[80px] xl:w-[190px] bottom-20 xl:bottom-20 sm:bottom-35 lg:bottom-40 md:bottom-30 left-7 pointer-events-none select-none lg:scale-150 xl:scale-100"
+                  className="absolute w-[80px] xl:w-[190px] bottom-[80px] xl:bottom-[80px] sm:bottom-[140px] lg:bottom-[160px] md:bottom-[120px] left-[28px] pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={emoji4}
                   alt=""
                   priority
                 />
                 <Image
-                  className="absolute w-[180px] xl:w-[290px] bottom-10 right-0 sm:bottom-20 lg:bottom-25 md:bottom-15 md:right-10 pointer-events-none select-none lg:scale-150 xl:scale-100"
+                  className="absolute w-[180px] xl:w-[290px] bottom-10 right-0 sm:bottom-[80px] lg:bottom-[100px] md:bottom-[60px] md:right-[40px] pointer-events-none select-none lg:scale-150 xl:scale-100"
                   src={gifEmoji}
                   alt=""
                   priority
@@ -152,7 +152,7 @@ export default function Hero() {
           </div>
           <div className="absolute w-full h-full z-10 overflow-hidden">
             <Image
-              className="w-screen md:scale-170 scale-500 h-auto pointer-events-none select-none"
+              className="w-full scale-background-circle pointer-events-none select-none"
               src={backgroundCircles}
               alt=""
               priority
@@ -169,7 +169,7 @@ export default function Hero() {
         </div>
         <div className="absolute bottom-7 md:bottom-0 w-full z-50">
           <Image
-            className="pointer-events-none select-none w-full scale-350 lg:scale-230 xl:scale-105"
+            className="pointer-events-none select-none w-full scale-cloud-hero"
             src={cloud}
             alt=""
             priority

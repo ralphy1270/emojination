@@ -11,11 +11,11 @@ import FaqSection from "./FaqSection";
 export default function Faq() {
   return (
     <div id="faq">
-      <div className="relative h-fit xl:h-[1280px] overflow-hidden pb-30">
-        <div className="flex items-center justify-center py-3 xl:pt-7 xl:pb-2">
+      <div className="relative h-fit xl:h-[1280px] overflow-hidden pb-[120px]">
+        <div className="flex items-center justify-center py-[12px] xl:pt-[28px] xl:pb-[8px">
           <span className="font-bangers text-[40px] xl:text-[52px]">Promotion Mechanics</span>
         </div>
-        <div className="flex flex-col items-center justify-start xl:py-0 px-5 xl:px-75 space-y-12">
+        <div className="flex flex-col items-center justify-start xl:py-0 px-[20px] xl:px-[300px] space-y-[48px]">
           <FaqSection question="Who can join?">
             This contest is open to all Filipinos who are 18 years old and
             above.
@@ -61,7 +61,7 @@ export default function Faq() {
           />
         </div>
         <Image
-          className="pointer-events-none select-none absolute bottom-20 xl:bottom-0 max-w-full scale-300 xl:scale-100"
+          className="pointer-events-none select-none absolute bottom-[80px] xl:bottom-0 max-w-full scale-280 xl:scale-100"
           src={backgroundBuilding}
           alt=""
           priority

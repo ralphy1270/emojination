@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Modal from "@/src/components/Modal";
 
 import QuestionSection from "@/src/components/QuestionSection";
 
@@ -47,8 +46,7 @@ export default function Form() {
 
   return (
     <div id="form">
-      <Modal/>
-      <div className="flex flex-row items-start justify-center px-5 pt-7 pb-3">
+      <div className="flex flex-row items-start justify-center px-[20px] pt-[28px] pb-[12px]">
         <div className="flex items-center justify-center">
           <span className="font-bangers text-[40px] xl:text-[52px] uppercase">
             Emoji Question of the Week:
@@ -56,7 +54,7 @@ export default function Form() {
         </div>
       </div>
       {components[index]}
-      <div className="px-5 xl:px-72 xl:pb-25 xl:pt-3 pb-7 font-figtree font-bold text-base text-center italic">
+      <div className="px-[20px] xl:px-[288px] xl:pb-[100px] xl:pt-[12px] pb-[28px] font-figtree font-bold text-base text-center italic">
         Promo runs from
         <span className="font-extrabold"> May 31, 2025 to August 09, 2025</span>
         . Per DTI-Fair Trade Permit No. FTEB-206859 Series of 2024. Click{" "}

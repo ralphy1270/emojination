@@ -59,11 +59,11 @@ export async function POST(request) {
       throw new Error(`Google Script Error: ${text}`);
     }
 
-    const data = await response.text();
+    const data = await response.json();
     console.log(data);
 
     return new Response(
-      JSON.stringify({ message: data }),
+      JSON.stringify(data),
       {
         status: 200,
         headers: { "Content-Type": "application/json" },

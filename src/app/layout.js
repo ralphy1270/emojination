@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "@/src/components/Navbar";
-import Footer from "@/src/components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,10 +8,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <script src="https://cignal-tv.s3.us-east-1.amazonaws.com/widget/nav.min.js" />
+        <script src="https://cignal-tv.s3.us-east-1.amazonaws.com/widget/footer.min.js" />
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
       <body>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
